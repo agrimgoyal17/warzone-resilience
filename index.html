@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warzone Resilience - VR Disaster Training Platform</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animated">
+        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 80%; top: 60%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 50%; top: 40%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 30%; top: 70%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; animation-delay: 3s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo">⚡ WARZONE</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#modules">Modules</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" onclick="openAdminPanel(); return false;" style="color: var(--primary-magenta);">Admin</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" onclick="openModal('login')">Login</button>
+                <button class="btn btn-primary" onclick="openModal('register')">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 id="heroTitle">SURVIVE THE IMPOSSIBLE</h1>
+                <p class="subtitle" id="heroSubtitle">Immersive VR training for natural disasters. Master earthquake drills, flood escapes, fire evacuations, and landslide responses in hyper-realistic simulations.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary btn-large" id="startTrainingBtn" onclick="openModal('register')">Start Training</button>
+                    <button class="btn btn-outline btn-large" id="exploreBtn" onclick="scrollToModules()">Explore Modules</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="vr-container">
+                    <div class="vr-glow"></div>
+                    <div class="vr-headset">
+                        <div class="vr-frame">
+                            <div class="vr-lens"></div>
+                            <div class="vr-lens"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">10K+</div>
+                <div class="stat-label">Lives Trained</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Disaster Types</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Access</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Modules Section -->
+    <section class="modules-section" id="modules">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">VR Training Modules</h2>
+                <p class="section-subtitle">Master disaster response through immersive simulations</p>
+            </div>
+            
+            <div class="modules-grid">
+                <!-- Earthquake Module -->
+                <div class="module-card">
+                    <div class="module-icon">🏚️</div>
+                    <h3>Earthquake Response</h3>
+                    <p>Learn critical drop-cover-hold techniques and building evacuation protocols</p>
+                    <ul class="module-features">
+                        <li>✓ Drop, Cover, Hold drill</li>
+                        <li>✓ Safe exit strategies</li>
+                        <li>✓ After-shock protocols</li>
+                        <li>✓ Search & rescue basics</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="showNotification('🏚️ Earthquake Module', 'Starting VR earthquake simulation...', 'info')">Launch Module</button>
+                </div>
+
+                <!-- Flood Module -->
+                <div class="module-card">
+                    <div class="module-icon">🌊</div>
+                    <h3>Flood Management</h3>
+                    <p>Navigate water emergencies and execute safe evacuations</p>
+                    <ul class="module-features">
+                        <li>✓ Water rescue techniques</li>
+                        <li>✓ Emergency supply prep</li>
+                        <li>✓ Evacuation planning</li>
+                        <li>✓ Communication protocols</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="showNotification('🌊 Flood Module', 'Starting VR flood simulation...', 'info')">Launch Module</button>
+                </div>
+
+                <!-- Fire Emergency Module -->
+                <div class="module-card">
+                    <div class="module-icon">🔥</div>
+                    <h3>Fire Emergency</h3>
+                    <p>Master fire safety protocols and evacuation procedures</p>
+                    <ul class="module-features">
+                        <li>✓ Fire extinguisher usage</li>
+                        <li>✓ Smoke navigation</li>
+                        <li>✓ Building evacuation</li>
+                        <li>✓ First aid for burns</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="showNotification('🔥 Fire Module', 'Starting VR fire emergency simulation...', 'info')">Launch Module</button>
+                </div>
+
+                <!-- Landslide Module -->
+                <div class="module-card">
+                    <div class="module-icon">⛰️</div>
+                    <h3>Landslide Response</h3>
+                    <p>Identify warning signs and execute safe evacuations</p>
+                    <ul class="module-features">
+                        <li>✓ Warning sign detection</li>
+                        <li>✓ Safe route planning</li>
+                        <li>✓ Emergency shelter setup</li>
+                        <li>✓ Risk assessment</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="showNotification('⛰️ Landslide Module', 'Starting VR landslide simulation...', 'info')">Launch Module</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Warzone?</h2>
+                <p class="section-subtitle">Advanced features for comprehensive disaster preparedness</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Immersive VR Experience</h3>
+                    <p>Realistic 360° environments that simulate actual disaster scenarios with stunning accuracy</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Performance Analytics</h3>
+                    <p>Detailed tracking and reports to measure your progress and identify improvement areas</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Adaptive Learning</h3>
+                    <p>AI-powered scenarios that adjust difficulty based on your skill level and performance</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Certification Programs</h3>
+                    <p>Earn recognized disaster response certifications upon successful completion</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Multi-User Training</h3>
+                    <p>Collaborate with team members in shared VR environments for realistic scenarios</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>24/7 Global Access</h3>
+                    <p>Train anytime, anywhere with our cloud-based platform accessible worldwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant Section -->
+    <section id="ai-assistant" class="ai-section">
+        <div class="section-container">
+            <div class="ai-assistant-card">
+                <div class="ai-header">
+                    <div class="ai-avatar">🤖</div>
+                    <div>
+                        <h3>AI Disaster Assistant</h3>
+                        <p>Get instant safety tips and emergency guidance in Hindi & English</p>
+                    </div>
+                </div>
+                
+                <div class="ai-chat-container" id="aiChatContainer">
+                    <div class="ai-message ai-bot">
+                        <strong>नमस्ते! 🙏</strong> मैं आपका आपातकालीन सहायक हूं। मैं आपको भूकंप, बाढ़, आग और अन्य आपदाओं के बारे में जानकारी दे सकता हूं।<br><br>
+                        <strong>Hello!</strong> I'm your emergency assistant. I can help you with earthquake, flood, fire, and other disaster safety information.
+                    </div>
+                </div>
+                
+                <div class="ai-input-container">
+                    <input 
+                        type="text" 
+                        id="aiInput" 
+                        class="ai-input" 
+                        placeholder="Ask about earthquake, flood, fire safety... (Hindi/English)"
+                        onkeypress="if(event.key==='Enter') sendAIMessage()"
+                    >
+                    <button class="ai-send-btn" onclick="sendAIMessage()">📤</button>
+                </div>
+                
+                <div class="ai-quick-tips">
+                    <button class="quick-tip-btn" onclick="askAI('भूकंप के दौरान क्या करें?')">🏚️ भूकंप</button>
+                    <button class="quick-tip-btn" onclick="askAI('बाढ़ से कैसे बचें?')">🌊 बाढ़</button>
+                    <button class="quick-tip-btn" onclick="askAI('आग लगने पर क्या करें?')">🔥 आग</button>
+                    <button class="quick-tip-btn" onclick="askAI('Emergency numbers')">🚨 Emergency</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">About Warzone Resilience</h2>
+                <p class="section-subtitle">Building a safer tomorrow through technology</p>
+            </div>
+            
+            <div class="about-content">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: rgba(255, 255, 255, 0.8); max-width: 900px; margin: 0 auto 2rem;">
+                    Warzone Resilience is India's premier Virtual Reality disaster management training platform. 
+                    We combine cutting-edge VR technology with expert disaster response protocols to create 
+                    immersive, life-saving training experiences that prepare individuals and organizations for 
+                    natural disasters.
+                </p>
+                
+                <div class="stats-grid" style="margin-top: 3rem;">
+                    <div class="stat-card">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Users Trained</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">VR Scenarios</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Partner Organizations</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to start your disaster preparedness journey?</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p>+91 7252016402</p>
+                    <button class="btn btn-primary" onclick="callNumber()">Call Now</button>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p>support@warzoneresilience.com</p>
+                    <button class="btn btn-primary" onclick="sendEmail()">Send Email</button>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <p>Chat with our team 24/7</p>
+                    <button class="btn btn-primary" onclick="openWhatsApp()">Open Chat</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">WARZONE</h3>
+                <p>India's Premier VR Disaster Training Platform</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#modules">Modules</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Emergency</h4>
+                <ul>
+                    <li>📞 112 - All India Emergency</li>
+                    <li>🚒 101 - Fire Brigade</li>
+                    <li>🚑 102 - Ambulance</li>
+                    <li>👮 100 - Police</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Phone: +91 7252016402</li>
+                    <li>Email: support@warzoneresilience.com</li>
+                    <li>Location: India</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Warzone Resilience. All rights reserved. | Made with ❤️ in India</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('login')">&times;</span>
+            <h2>Login to Warzone</h2>
+            <form onsubmit="handleLogin(event)" style="display: flex; flex-direction: column; gap: 1rem;">
+                <input type="email" placeholder="Email Address" required style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,245,0.3); border-radius: 10px; color: #fff;">
+                <input type="password" placeholder="Password" required style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,245,0.3); border-radius: 10px; color: #fff;">
+                <button type="submit" class="btn btn-primary btn-large">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="register" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('register')">&times;</span>
+            <h2>Join Warzone Resilience</h2>
+            <form onsubmit="handleRegister(event)" style="display: flex; flex-direction: column; gap: 1rem;">
+                <input type="text" placeholder="Full Name" required style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,245,0.3); border-radius: 10px; color: #fff;">
+                <input type="email" placeholder="Email Address" required style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,245,0.3); border-radius: 10px; color: #fff;">
+                <input type="tel" placeholder="Phone Number" required style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,245,0.3); border-radius: 10px; color: #fff;">
+                <input type="password" placeholder="Password" required style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,245,0.3); border-radius: 10px; color: #fff;">
+                <button type="submit" class="btn btn-primary btn-large">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h1>⚡ ADMIN CONTROL PANEL</h1>
+                <button class="btn btn-outline" onclick="closeAdminPanel()">✕ Close</button>
+            </div>
+            
+            <div class="admin-body">
+                <!-- Add New Scenario Form -->
+                <div class="admin-section">
+                    <h3>🎮 Add New VR Scenario</h3>
+                    <form onsubmit="handleAddScenario(event)" style="display: grid; gap: 1rem;">
+                        <input type="text" placeholder="Scenario Name (e.g., Tsunami Escape)" required style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,245,0.3); border-radius: 10px; color: #fff;">
+                        <textarea placeholder="Description" required style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,245,0.3); border-radius: 10px; color: #fff; min-height: 100px;"></textarea>
+                        <input type="text" placeholder="Difficulty (Easy/Medium/Hard)" required style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,245,0.3); border-radius: 10px; color: #fff;">
+                        <button type="submit" class="btn btn-primary">Add Scenario</button>
+                    </form>
+                </div>
+                
+                <!-- Platform Stats -->
+                <div class="admin-section">
+                    <h3>📊 Platform Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">10,247</div>
+                            <div class="stat-label">Total Users</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">1,523</div>
+                            <div class="stat-label">Active Today</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15</div>
+                            <div class="stat-label">VR Modules</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">98.2%</div>
+                            <div class="stat-label">Satisfaction Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Access Button -->
+    <button class="admin-access-btn" onclick="openAdminPanel()">🔐</button>
+
+    <!-- External JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
