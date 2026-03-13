@@ -164,7 +164,7 @@ function getAIResponse(question) {
             👮 Police: <strong>100</strong><br>
             🌊 Disaster Management: <strong>108</strong><br><br>
             <strong>हमसे संपर्क करें:</strong><br>
-            📱 Warzone Support: <strong>+91 7252016402</strong><br><br>
+            📱 Warzone Support: <strong>+91 8923781885</strong><br><br>
             💡 शांत रहें और मदद के लिए फोन करें!
         `;
     }
@@ -213,7 +213,7 @@ function handleAddScenario(event) {
 // ===================================================================
 
 function callNumber() {
-    window.location.href = 'tel:+917252016402';
+    window.location.href = 'tel:+918923781885';
 }
 
 function sendEmail() {
@@ -221,7 +221,7 @@ function sendEmail() {
 }
 
 function openWhatsApp() {
-    window.open('https://wa.me/917252016402?text=Hello%20Warzone%20Resilience!%20I\'m%20interested%20in%20VR%20disaster%20training.', '_blank');
+    window.open('https://wa.me/918923781885?text=Hello%20Warzone%20Resilience!%20I\'m%20interested%20in%20VR%20disaster%20training.', '_blank');
 }
 
 // ===================================================================
@@ -306,4 +306,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('🎮 Warzone Resilience - JavaScript Loaded Successfully!');
-console.log('📞 Contact: +91 7252016402');
+console.log('📞 Contact: +91 8923781885');

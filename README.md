@@ -151,7 +151,7 @@ if (q.includes('tsunami')) {
 
 ## 📞 Contact Information
 
-- **Phone/WhatsApp:** +91 7252016402
+- **Phone/WhatsApp:** +91 8923781885
 - **Email:** support@warzoneresilience.com
 - **Website:** [warzoneresilience.com](#)
 
@@ -231,7 +231,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Warzone Resilience Team**
 - Website: [warzoneresilience.com](#)
 - Email: support@warzoneresilience.com
-- Phone: +91 7252016402
+- Phone: +91 8923781885
 
 ---
 
